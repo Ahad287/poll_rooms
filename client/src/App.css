@@ -1,0 +1,232 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --text-main: #1a202c;
+  --text-light: #718096;
+  --bg-input: #f7fafc; 
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-main);
+}
+
+.app-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* WIDER CARD */
+.card {
+  background: rgba(255, 255, 255, 0.98);
+  width: 100%;
+  max-width: 650px; 
+  padding: 3rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+h1.brand-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-subtitle {
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 2.5rem;
+}
+
+/* INPUTS */
+.input-wrapper { margin-bottom: 1.5rem; }
+
+.input-wrapper label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: #4a5568;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 16px;
+  background: var(--bg-input); 
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+input[type="text"]:hover {
+  background: #ffffff;
+  border-color: #cbd5e0;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+/* Option Rows */
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.option-dot {
+  width: 28px;
+  height: 28px;
+  background: #e2e8f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #718096;
+}
+
+/* --- MISSING PART ADDED HERE --- */
+/* Add Option Button (Purple) */
+.action-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #667eea; 
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.2);
+}
+
+.action-btn:hover {
+  background-color: #5a67d8; 
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Primary Button (Create Poll) */
+.primary-btn {
+  width: 100%;
+  padding: 18px;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: 14px;
+  background: var(--primary-gradient);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(118, 75, 162, 0.3);
+  transition: transform 0.2s;
+}
+.primary-btn:hover { transform: translateY(-2px); }
+
+/* RESULT CARDS */
+.poll-results { margin-top: 2rem; }
+
+.result-card {
+  background: var(--bg-input);
+  border: 2px solid #edf2f7;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.result-card:hover {
+  background: #ffffff;
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.result-card.voted {
+  background: #f8fbff;
+  border-color: #667eea;
+}
+
+.progress-bg {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  background: rgba(102, 126, 234, 0.15); 
+  z-index: 1;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.result-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+/* Action Buttons Footer (Share / New) */
+.actions-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  gap: 10px;
+}
+
+.secondary-btn {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  background: white;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.secondary-btn:hover {
+  border-color: #cbd5e0;
+  background: #f7fafc;
+  color: #2d3748;
+}
+
+.secondary-btn.blue:hover { border-color: #667eea; color: #667eea; }
